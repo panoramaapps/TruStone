@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Customer 360 - Alexander Thompson</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "error": "#9f403d",
+                        "surface": "#f7f9fb",
+                        "on-error-container": "#752121",
+                        "secondary-fixed": "#d3e4fe",
+                        "tertiary-container": "#7ff3be",
+                        "tertiary-fixed": "#7ff3be",
+                        "inverse-on-surface": "#9a9d9f",
+                        "on-primary-container": "#334c9d",
+                        "outline": "#717c82",
+                        "surface-container-highest": "#d9e4ea",
+                        "primary": "#4059aa",
+                        "on-secondary-fixed-variant": "#4d5d73",
+                        "secondary-fixed-dim": "#c5d6f0",
+                        "primary-fixed-dim": "#c9d3ff",
+                        "outline-variant": "#a9b4b9",
+                        "surface-variant": "#d9e4ea",
+                        "error-dim": "#4e0309",
+                        "tertiary-dim": "#005f41",
+                        "on-tertiary": "#e6ffef",
+                        "surface-dim": "#cfdce3",
+                        "error-container": "#fe8983",
+                        "on-tertiary-container": "#005a3d",
+                        "on-surface-variant": "#566166",
+                        "on-secondary-container": "#435368",
+                        "surface-container-low": "#f0f4f7",
+                        "surface-container-lowest": "#ffffff",
+                        "on-primary": "#f8f7ff",
+                        "on-background": "#2a3439",
+                        "surface-container": "#e8eff3",
+                        "surface-container-high": "#e1e9ee",
+                        "on-tertiary-fixed": "#00452e",
+                        "on-secondary": "#f7f9ff",
+                        "inverse-surface": "#0b0f10",
+                        "primary-fixed": "#dce1ff",
+                        "inverse-primary": "#8fa7fe",
+                        "on-secondary-fixed": "#314055",
+                        "on-error": "#fff7f6",
+                        "secondary-container": "#d3e4fe",
+                        "surface-bright": "#f7f9fb",
+                        "on-tertiary-fixed-variant": "#006545",
+                        "secondary": "#506076",
+                        "on-primary-fixed": "#1d3989",
+                        "secondary-dim": "#44546a",
+                        "primary-dim": "#334d9d",
+                        "background": "#f7f9fb",
+                        "on-primary-fixed-variant": "#3d57a7",
+                        "on-surface": "#2a3439",
+                        "tertiary": "#006d4b",
+                        "tertiary-fixed-dim": "#71e4b1",
+                        "primary-container": "#dce1ff",
+                        "surface-tint": "#4059aa"
+                    },
+                    fontFamily: {
+                        "headline": ["Manrope"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    },
+                    borderRadius: { "DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.25rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3 { font-family: 'Manrope', sans-serif; }
+        .custom-scrollbar::-webkit-scrollbar { width: 4px; }
+        .custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: #d9e4ea; border-radius: 10px; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface selection:bg-primary-container selection:text-on-primary-container">
+<!-- Sidebar Navigation (SideNavBar) -->
+<aside class="h-screen w-64 fixed left-0 top-0 bg-[#e1e9ee] flex flex-col py-6 px-4 z-50">
+<div class="mb-10 px-2">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined" data-icon="account_balance_wallet">account_balance_wallet</span>
+</div>
+<div>
+<h2 class="text-xl font-black text-[#2a3439] leading-tight">Concierge</h2>
+<p class="text-[10px] uppercase tracking-widest text-on-surface-variant font-bold">Premium Insurance</p>
+</div>
+</div>
+</div>
+<nav class="flex-1 space-y-2">
+<a class="flex items-center gap-3 px-4 py-3 text-[#566166] hover:bg-[#f0f4f7] transition-all rounded-lg group" href="#">
+<span class="material-symbols-outlined group-hover:text-primary" data-icon="dashboard">dashboard</span>
+<span class="font-manrope font-medium text-sm tracking-tight">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-[#0D47A1] font-bold bg-[#f0f4f7] rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+<span class="font-manrope font-medium text-sm tracking-tight">Clients</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-[#566166] hover:bg-[#f0f4f7] transition-all rounded-lg group" href="#">
+<span class="material-symbols-outlined group-hover:text-primary" data-icon="description">description</span>
+<span class="font-manrope font-medium text-sm tracking-tight">Policies</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-[#566166] hover:bg-[#f0f4f7] transition-all rounded-lg group" href="#">
+<span class="material-symbols-outlined group-hover:text-primary" data-icon="gavel">gavel</span>
+<span class="font-manrope font-medium text-sm tracking-tight">Claims</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-[#566166] hover:bg-[#f0f4f7] transition-all rounded-lg group" href="#">
+<span class="material-symbols-outlined group-hover:text-primary" data-icon="analytics">analytics</span>
+<span class="font-manrope font-medium text-sm tracking-tight">Reports</span>
+</a>
+</nav>
+<div class="mt-auto pt-6 border-t border-outline-variant/20 space-y-2">
+<a class="flex items-center gap-3 px-4 py-2 text-[#566166] hover:text-[#2a3439] transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-manrope font-medium text-sm tracking-tight">Settings</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-2 text-[#566166] hover:text-[#2a3439] transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="contact_support">contact_support</span>
+<span class="font-manrope font-medium text-sm tracking-tight">Support</span>
+</a>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="ml-64 min-h-screen">
+<!-- Top Navigation (TopNavBar) -->
+<header class="w-full h-16 sticky top-0 z-40 bg-[#f7f9fb] flex justify-between items-center px-8">
+<div class="flex items-center gap-8">
+<h1 class="text-lg font-bold text-[#0D47A1]">The Curated Ledger</h1>
+<div class="relative group">
+<span class="absolute left-3 top-1/2 -translate-y-1/2 material-symbols-outlined text-on-surface-variant text-sm" data-icon="search">search</span>
+<input class="bg-surface-container-low border-none rounded-full py-2 pl-10 pr-4 text-sm w-64 focus:ring-2 focus:ring-primary/20 transition-all" placeholder="Search client or policy..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="flex items-center gap-2 px-4 py-2 bg-[#0D47A1] text-on-primary rounded-full text-sm font-medium hover:shadow-lg transition-all">
+<span class="material-symbols-outlined text-lg" data-icon="add">add</span>
+                    New Policy
+                </button>
+<button class="p-2 text-on-surface-variant hover:bg-surface-container-low rounded-full transition-colors">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<div class="h-8 w-8 rounded-full bg-surface-container-highest overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Agent profile headshot professional" src="./assets/embed-1.png"/>
+</div>
+</div>
+</header>
+<!-- Dashboard Content -->
+<div class="p-8 max-w-[1600px] mx-auto space-y-6">
+<!-- Hero Identity & Account Health -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+<!-- Hero -->
+<section class="lg:col-span-8 bg-surface-container-lowest rounded-xl p-8 flex flex-col sm:flex-row gap-8 items-center shadow-[0_4px_20px_rgba(42,52,57,0.03)] border border-surface-container">
+<div class="relative">
+<div class="w-28 h-28 rounded-full border-4 border-surface-container p-1">
+<img class="w-full h-full object-cover rounded-full" data-alt="Client portrait of Alexander Thompson" src="./assets/embed-2.png"/>
+</div>
+<span class="absolute bottom-1 right-1 bg-tertiary-container text-on-tertiary-container text-[10px] px-2 py-0.5 rounded-full font-bold uppercase tracking-tighter">VIP Member</span>
+</div>
+<div class="flex-1 space-y-1 text-center sm:text-left">
+<div class="flex items-center justify-center sm:justify-start gap-3">
+<h2 class="text-3xl font-extrabold text-on-surface tracking-tight">Alexander Thompson</h2>
+<span class="material-symbols-outlined text-primary" data-icon="verified">verified</span>
+</div>
+<p class="text-on-surface-variant flex items-center justify-center sm:justify-start gap-2 font-medium">
+<span class="material-symbols-outlined text-sm" data-icon="mail">mail</span> alexander.t@example.com
+                            <span class="mx-2 opacity-20">|</span>
+<span class="material-symbols-outlined text-sm" data-icon="call">call</span> (555) 234-8901
+                        </p>
+<div class="flex justify-center sm:justify-start gap-4 pt-3">
+<div class="text-[11px] bg-surface-container-low px-3 py-1 rounded-md text-on-surface-variant">
+<span class="font-bold">DOB:</span> May 14, 1982
+                            </div>
+<div class="text-[11px] bg-surface-container-low px-3 py-1 rounded-md text-on-surface-variant">
+<span class="font-bold">Client Since:</span> 2015
+                            </div>
+</div>
+</div>
+</section>
+<!-- Key Metrics / Account Health -->
+<section class="lg:col-span-4 bg-surface-container-high rounded-xl p-6 space-y-4">
+<div class="flex justify-between items-start">
+<h3 class="text-xs font-bold uppercase tracking-widest text-on-surface-variant">Account Health</h3>
+<div class="px-2 py-1 bg-tertiary-container text-on-tertiary-container rounded text-[10px] font-black uppercase">Platinum Tier</div>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="space-y-1">
+<div class="flex justify-between items-end">
+<span class="text-[10px] font-bold text-on-surface-variant uppercase">Retention Score</span>
+<span class="text-sm font-black text-tertiary">98%</span>
+</div>
+<div class="w-full bg-surface-container-highest h-1 rounded-full overflow-hidden">
+<div class="bg-tertiary h-full w-[98%]"></div>
+</div>
+</div>
+<div class="space-y-1">
+<div class="flex justify-between items-end">
+<span class="text-[10px] font-bold text-on-surface-variant uppercase">Value Score</span>
+<span class="text-sm font-black text-primary">8.4/10</span>
+</div>
+<div class="w-full bg-surface-container-highest h-1 rounded-full overflow-hidden">
+<div class="bg-primary h-full w-[84%]"></div>
+</div>
+</div>
+</div>
+<!-- New Analytical Metric Cards -->
+<div class="grid grid-cols-2 gap-3">
+<div class="bg-surface-container-lowest p-3 rounded-lg border border-outline-variant/10 shadow-sm">
+<p class="text-[9px] font-bold text-on-surface-variant uppercase tracking-tighter mb-1">Lifetime Value (CLV)</p>
+<div class="flex items-baseline gap-1.5">
+<span class="text-sm font-black text-on-surface">$124,500</span>
+<span class="text-[9px] font-bold text-tertiary">+14%</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-3 rounded-lg border border-outline-variant/10 shadow-sm flex items-center justify-between">
+<div>
+<p class="text-[9px] font-bold text-on-surface-variant uppercase tracking-tighter mb-1">Loss Ratio</p>
+<span class="text-sm font-black text-on-surface">12%</span>
+</div>
+<!-- Simple Circular Gauge SVG -->
+<div class="relative h-8 w-8">
+<svg class="h-full w-full" viewbox="0 0 36 36">
+<path class="stroke-surface-container-highest" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke-dasharray="100, 100" stroke-width="3"></path>
+<path class="stroke-tertiary" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke-dasharray="12, 100" stroke-linecap="round" stroke-width="3"></path>
+</svg>
+</div>
+</div>
+</div>
+<div class="">
+<div class="flex justify-between items-center mb-1">
+<span class="text-[10px] font-bold text-on-surface-variant uppercase">Interaction Frequency</span>
+<span class="text-[10px] text-on-surface-variant">+12% vs avg</span>
+</div>
+<div class="flex items-end gap-[2px] h-8 pt-1">
+<div class="bg-primary/20 w-full h-[40%] rounded-t-sm"></div>
+<div class="bg-primary/20 w-full h-[60%] rounded-t-sm"></div>
+<div class="bg-primary/20 w-full h-[30%] rounded-t-sm"></div>
+<div class="bg-primary w-full h-[80%] rounded-t-sm"></div>
+<div class="bg-primary w-full h-[100%] rounded-t-sm"></div>
+<div class="bg-primary/40 w-full h-[65%] rounded-t-sm"></div>
+<div class="bg-primary/20 w-full h-[45%] rounded-t-sm"></div>
+</div>
+</div>
+</section>
+</div>
+<!-- Main Data Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+<!-- Policy Portfolio -->
+<div class="lg:col-span-8 space-y-6">
+<div class="bg-surface-container-lowest rounded-xl p-6 shadow-[0_4px_20px_rgba(42,52,57,0.03)] border border-surface-container">
+<div class="flex justify-between items-center mb-6">
+<h3 class="text-lg font-bold">Policy Portfolio</h3>
+<div class="text-xs font-bold text-on-surface-variant bg-surface-container px-3 py-1 rounded-full">Total Annual Premium: $14,250</div>
+</div>
+<div class="space-y-3">
+<!-- Policy Card 1 -->
+<div class="flex flex-col md:flex-row md:items-center justify-between p-5 bg-surface-container-low rounded-lg hover:border-primary/30 border border-transparent transition-all group">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-2xl" data-icon="home">home</span>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<p class="font-bold text-sm">Primary Residence (HO3)</p>
+<span class="text-[9px] font-black px-1.5 py-0.5 bg-tertiary-container text-on-tertiary-container rounded uppercase tracking-tighter">Low Risk</span>
+</div>
+<p class="text-[11px] text-on-surface-variant">POL-8839210-A • Exp. Nov 14, 2024</p>
+<div class="flex gap-4 mt-1.5">
+<span class="text-[10px] text-on-surface-variant">Deductible: <span class="font-bold text-on-surface">$2,500</span></span>
+<span class="text-[10px] text-on-surface-variant">Renewal Change: <span class="font-bold text-error">+2.1%</span></span>
+</div>
+</div>
+</div>
+<div class="mt-4 md:mt-0 flex items-center justify-between md:justify-end gap-8">
+<div class="text-right">
+<p class="text-sm font-black">$4,200</p>
+<p class="text-[9px] text-on-surface-variant uppercase font-bold tracking-tight">Premium</p>
+</div>
+<span class="bg-tertiary-container text-on-tertiary-container text-[10px] px-2 py-1 rounded font-bold">ACTIVE</span>
+<span class="material-symbols-outlined text-outline-variant group-hover:text-primary transition-colors cursor-pointer" data-icon="chevron_right">chevron_right</span>
+</div>
+</div>
+<!-- Policy Card 2 -->
+<div class="flex flex-col md:flex-row md:items-center justify-between p-5 bg-surface-container-low rounded-lg hover:border-primary/30 border border-transparent transition-all group">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-lg bg-secondary/10 flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-2xl" data-icon="directions_car">directions_car</span>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<p class="font-bold text-sm">Multi-Auto (Tesla &amp; Audi)</p>
+<span class="text-[9px] font-black px-1.5 py-0.5 bg-surface-container-highest text-on-surface-variant rounded uppercase tracking-tighter">Balanced Risk</span>
+</div>
+<p class="text-[11px] text-on-surface-variant">POL-1120042-M • Exp. Oct 14, 2024</p>
+<div class="flex gap-4 mt-1.5">
+<span class="text-[10px] text-on-surface-variant">Deductible: <span class="font-bold text-on-surface">$1,000</span></span>
+<span class="text-[10px] text-on-surface-variant">Renewal Change: <span class="font-bold text-tertiary">-1.5%</span></span>
+</div>
+</div>
+</div>
+<div class="mt-4 md:mt-0 flex items-center justify-between md:justify-end gap-8">
+<div class="text-right">
+<p class="text-sm font-black">$3,850</p>
+<p class="text-[9px] text-on-surface-variant uppercase font-bold tracking-tight">Premium</p>
+</div>
+<span class="bg-tertiary-container text-on-tertiary-container text-[10px] px-2 py-1 rounded font-bold">ACTIVE</span>
+<span class="material-symbols-outlined text-outline-variant group-hover:text-primary transition-colors cursor-pointer" data-icon="chevron_right">chevron_right</span>
+</div>
+</div>
+<!-- Policy Card 3 -->
+<div class="flex flex-col md:flex-row md:items-center justify-between p-5 bg-surface-container-low rounded-lg hover:border-primary/30 border border-transparent transition-all group border-primary/20 shadow-sm">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-lg bg-tertiary/10 flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined text-2xl" data-icon="diamond">diamond</span>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<p class="font-bold text-sm">Valuable Items (Floater)</p>
+<span class="text-[9px] font-black px-1.5 py-0.5 bg-tertiary-container text-on-tertiary-container rounded uppercase tracking-tighter">Low Risk</span>
+</div>
+<p class="text-[11px] text-on-surface-variant">POL-9920311-V • Exp. Dec 01, 2024</p>
+<div class="flex gap-4 mt-1.5">
+<span class="text-[10px] text-on-surface-variant">Items: <span class="font-bold text-on-surface">4 Scheduled</span></span>
+<span class="text-[10px] text-on-surface-variant">Last Appraisal: <span class="font-bold text-on-surface">Jan 2024</span></span>
+</div>
+</div>
+</div>
+<div class="mt-4 md:mt-0 flex items-center justify-between md:justify-end gap-8">
+<div class="text-right">
+<p class="text-sm font-black">$6,200</p>
+<p class="text-[9px] text-on-surface-variant uppercase font-bold tracking-tight">Premium</p>
+</div>
+<span class="bg-tertiary-container text-on-tertiary-container text-[10px] px-2 py-1 rounded font-bold">ACTIVE</span>
+<span class="material-symbols-outlined text-outline-variant group-hover:text-primary transition-colors cursor-pointer" data-icon="chevron_right">chevron_right</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Competitive External Policies -->
+<div class="bg-surface-container-lowest rounded-xl p-6 shadow-[0_4px_20px_rgba(42,52,57,0.03)] border border-surface-container">
+<div class="flex justify-between items-center mb-6">
+<h3 class="text-lg font-bold">Competitive External Policies</h3>
+<div class="text-xs font-bold text-on-surface-variant bg-surface-container px-3 py-1 rounded-full">Estimated Wallet Share Potential: $5,800</div>
+</div>
+<div class="space-y-3">
+<!-- External Card 1 -->
+<div class="flex flex-col md:flex-row md:items-center justify-between p-5 bg-surface-container-low/50 border border-outline-variant/20 rounded-lg hover:border-secondary/30 transition-all group">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-lg bg-outline-variant/10 flex items-center justify-center text-outline">
+<span class="material-symbols-outlined text-2xl" data-icon="umbrella">umbrella</span>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<p class="font-bold text-sm">Umbrella Liability (Progressive)</p>
+<span class="text-[9px] font-black px-1.5 py-0.5 bg-surface-container-highest text-on-surface-variant rounded uppercase tracking-tighter">External</span>
+</div>
+<p class="text-[11px] text-on-surface-variant">EXT-PRG-0021 • Exp. Feb 18, 2025</p>
+<div class="flex gap-4 mt-1.5">
+<span class="text-[10px] text-on-surface-variant">Limit: <span class="font-bold text-on-surface">$2M Liability</span></span>
+</div>
+</div>
+</div>
+<div class="mt-4 md:mt-0 flex items-center justify-between md:justify-end gap-6">
+<div class="text-right">
+<p class="text-sm font-black text-on-surface-variant">$1,450</p>
+<p class="text-[9px] text-on-surface-variant uppercase font-bold tracking-tight">Est. Premium</p>
+</div>
+<button class="px-4 py-2 bg-primary/10 text-primary hover:bg-primary hover:text-on-primary text-[10px] font-black uppercase tracking-widest rounded-lg transition-all">
+                                        Renew with Us
+                                    </button>
+</div>
+</div>
+<!-- External Card 2 -->
+<div class="flex flex-col md:flex-row md:items-center justify-between p-5 bg-surface-container-low/50 border border-outline-variant/20 rounded-lg hover:border-secondary/30 transition-all group">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-lg bg-outline-variant/10 flex items-center justify-center text-outline">
+<span class="material-symbols-outlined text-2xl" data-icon="beach_access">beach_access</span>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<p class="font-bold text-sm">Florida Secondary Home (State Farm)</p>
+<span class="text-[9px] font-black px-1.5 py-0.5 bg-surface-container-highest text-on-surface-variant rounded uppercase tracking-tighter">External</span>
+</div>
+<p class="text-[11px] text-on-surface-variant">EXT-SFM-9912 • Exp. June 10, 2025</p>
+<div class="flex gap-4 mt-1.5">
+<span class="text-[10px] text-on-surface-variant">Location: <span class="font-bold text-on-surface">Naples, FL</span></span>
+</div>
+</div>
+</div>
+<div class="mt-4 md:mt-0 flex items-center justify-between md:justify-end gap-6">
+<div class="text-right">
+<p class="text-sm font-black text-on-surface-variant">$4,350</p>
+<p class="text-[9px] text-on-surface-variant uppercase font-bold tracking-tight">Est. Premium</p>
+</div>
+<button class="px-4 py-2 bg-primary text-on-primary hover:shadow-lg text-[10px] font-black uppercase tracking-widest rounded-lg transition-all">
+                                        Generate Quote
+                                    </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Secondary Insights Row -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="bg-surface-container-lowest rounded-xl p-6 border border-surface-container">
+<h3 class="text-xs font-bold uppercase tracking-widest text-on-surface-variant mb-6">Upcoming Milestones</h3>
+<div class="relative pl-6 border-l border-outline-variant/30 space-y-6">
+<div class="relative">
+<div class="absolute -left-[29px] top-1 w-3 h-3 rounded-full bg-error border-2 border-surface-container-lowest"></div>
+<p class="text-[11px] font-bold text-error">OCT 14, 2024 • 28 DAYS LEFT</p>
+<p class="text-sm font-semibold">Auto Policy Renewal (POL-1120042)</p>
+</div>
+<div class="relative">
+<div class="absolute -left-[29px] top-1 w-3 h-3 rounded-full bg-primary border-2 border-surface-container-lowest"></div>
+<p class="text-[11px] font-bold text-on-surface-variant">NOV 22, 2024 • 67 DAYS LEFT</p>
+<p class="text-sm font-semibold">Homeowners Renewal (POL-8839210)</p>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-lowest rounded-xl p-6 border border-surface-container">
+<h3 class="text-xs font-bold uppercase tracking-widest text-on-surface-variant mb-4">Servicing Team</h3>
+<div class="space-y-4">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<img class="w-9 h-9 rounded-full object-cover" data-alt="Sarah Jenkins Headshot" src="./assets/embed-3.png"/>
+<div>
+<p class="text-xs font-bold">Sarah Jenkins</p>
+<p class="text-[9px] text-on-surface-variant font-medium">Primary Agent</p>
+</div>
+</div>
+<div class="flex gap-1">
+<button class="p-1.5 hover:bg-surface-container rounded text-primary"><span class="material-symbols-outlined text-base" data-icon="chat">chat</span></button>
+<button class="p-1.5 hover:bg-surface-container rounded text-primary"><span class="material-symbols-outlined text-base" data-icon="mail">mail</span></button>
+</div>
+</div>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-full bg-surface-container-high flex items-center justify-center text-on-surface-variant font-bold text-xs">MB</div>
+<div>
+<p class="text-xs font-bold">Marcus Bell</p>
+<p class="text-[9px] text-on-surface-variant font-medium">Claims Specialist</p>
+</div>
+</div>
+<div class="flex gap-1">
+<button class="p-1.5 hover:bg-surface-container rounded text-primary"><span class="material-symbols-outlined text-base" data-icon="chat">chat</span></button>
+<button class="p-1.5 hover:bg-surface-container rounded text-primary"><span class="material-symbols-outlined text-base" data-icon="call">call</span></button>
+</div>
+</div>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-full bg-surface-container-high flex items-center justify-center text-on-surface-variant font-bold text-xs">EL</div>
+<div>
+<p class="text-xs font-bold">Elena Lopez</p>
+<p class="text-[9px] text-on-surface-variant font-medium">Support Associate</p>
+</div>
+</div>
+<div class="flex gap-1">
+<button class="p-1.5 hover:bg-surface-container rounded text-primary"><span class="material-symbols-outlined text-base" data-icon="mail">mail</span></button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Sidebar: Activity & Claims -->
+<div class="lg:col-span-4 space-y-6">
+<!-- Recent Activity Timeline -->
+<div class="bg-surface-container-lowest rounded-xl p-6 shadow-[0_4px_20px_rgba(42,52,57,0.03)] border border-surface-container flex flex-col h-[520px]">
+<h3 class="text-xs font-bold uppercase tracking-widest text-on-surface-variant mb-6 flex items-center justify-between">
+                            Interaction History
+                            <span class="text-[10px] normal-case font-medium text-primary cursor-pointer hover:underline">View All</span>
+</h3>
+<div class="flex-1 overflow-y-auto pr-2 custom-scrollbar space-y-6">
+<!-- Timeline Item -->
+<div class="relative pl-6">
+<div class="absolute left-0 top-1 w-2 h-2 rounded-full bg-primary"></div>
+<div class="absolute left-[3.5px] top-3 w-[1px] h-[calc(100%+24px)] bg-surface-container-high"></div>
+<div class="flex justify-between items-start mb-0.5">
+<span class="text-[10px] font-black text-on-surface-variant">TODAY, 10:45 AM</span>
+<span class="material-symbols-outlined text-xs text-on-surface-variant" data-icon="call">call</span>
+</div>
+<p class="text-xs font-bold">Outbound Call - Claims Follow-up</p>
+<p class="text-[11px] text-on-surface-variant mt-0.5">Discussed glass repair appointment with Sarah M. Customer confirmed 2 PM slot.</p>
+</div>
+<!-- Timeline Item -->
+<div class="relative pl-6">
+<div class="absolute left-0 top-1 w-2 h-2 rounded-full bg-outline-variant"></div>
+<div class="absolute left-[3.5px] top-3 w-[1px] h-[calc(100%+24px)] bg-surface-container-high"></div>
+<div class="flex justify-between items-start mb-0.5">
+<span class="text-[10px] font-black text-on-surface-variant">SEPT 12, 2:15 PM</span>
+<span class="material-symbols-outlined text-xs text-on-surface-variant" data-icon="gavel">gavel</span>
+</div>
+<p class="text-xs font-bold">Claim Status Updated</p>
+<p class="text-[11px] text-on-surface-variant mt-0.5">Status changed to 'Adjuster Assigned' for Auto Glass Claim #9210-B.</p>
+</div>
+<!-- Timeline Item -->
+<div class="relative pl-6">
+<div class="absolute left-0 top-1 w-2 h-2 rounded-full bg-outline-variant"></div>
+<div class="absolute left-[3.5px] top-3 w-[1px] h-[calc(100%+24px)] bg-surface-container-high"></div>
+<div class="flex justify-between items-start mb-0.5">
+<span class="text-[10px] font-black text-on-surface-variant">SEPT 10, 09:30 AM</span>
+<span class="material-symbols-outlined text-xs text-on-surface-variant" data-icon="login">login</span>
+</div>
+<p class="text-xs font-bold">Portal Access: Document Viewed</p>
+<p class="text-[11px] text-on-surface-variant mt-0.5">Alexander viewed 'Homeowners Declaration' page via Customer Mobile App.</p>
+</div>
+<!-- Timeline Item -->
+<div class="relative pl-6">
+<div class="absolute left-0 top-1 w-2 h-2 rounded-full bg-outline-variant"></div>
+<div class="absolute left-[3.5px] top-3 w-[1px] h-[calc(100%+24px)] bg-surface-container-high"></div>
+<div class="flex justify-between items-start mb-0.5">
+<span class="text-[10px] font-black text-on-surface-variant">SEPT 04, 4:00 PM</span>
+<span class="material-symbols-outlined text-xs text-on-surface-variant" data-icon="mail">mail</span>
+</div>
+<p class="text-xs font-bold">Newsletter Engagement</p>
+<p class="text-[11px] text-on-surface-variant mt-0.5">Opened 'Preparing your Florida home for winter' email.</p>
+</div>
+<!-- Timeline Item -->
+<div class="relative pl-6">
+<div class="absolute left-0 top-1 w-2 h-2 rounded-full bg-outline-variant"></div>
+<div class="flex justify-between items-start mb-0.5">
+<span class="text-[10px] font-black text-on-surface-variant">AUG 28, 11:20 AM</span>
+<span class="material-symbols-outlined text-xs text-on-surface-variant" data-icon="call">call</span>
+</div>
+<p class="text-xs font-bold">Inbound Call - Coverage Inquiry</p>
+<p class="text-[11px] text-on-surface-variant mt-0.5">Inquired about secondary property coverage in FL. Noted for Q4 follow-up.</p>
+</div>
+</div>
+</div>
+<!-- Open Claims Flag -->
+<div class="bg-surface-container-high rounded-xl p-5 border border-surface-container">
+<div class="flex items-center justify-between mb-4">
+<h3 class="text-xs font-bold uppercase tracking-widest text-on-surface-variant">Open Claims</h3>
+<span class="w-2 h-2 rounded-full bg-error animate-pulse"></span>
+</div>
+<div class="flex items-end gap-2 mb-4">
+<span class="text-3xl font-black">01</span>
+<span class="text-xs font-bold text-on-surface-variant mb-1">PENDING RESOLUTION</span>
+</div>
+<div class="p-3 bg-surface-container-lowest rounded-lg border border-error-container/20 mb-4">
+<p class="text-[11px] font-black text-on-surface uppercase mb-1">Auto Glass Damage</p>
+<p class="text-[11px] text-on-surface-variant leading-tight">Adjuster assigned. Appointment: Tomorrow, 2:00 PM.</p>
+</div>
+<button class="w-full text-center py-2 text-[10px] font-black text-primary uppercase tracking-widest hover:bg-white/50 rounded transition-colors">
+                            View Claims History
+                        </button>
+</div>
+<!-- Household Members Panel -->
+<div class="bg-surface-container-lowest rounded-xl p-5 border border-surface-container shadow-[0_4px_20px_rgba(42,52,57,0.03)]">
+<div class="flex items-center justify-between mb-4">
+<h3 class="text-xs font-bold uppercase tracking-widest text-on-surface-variant">Household Members</h3>
+<span class="material-symbols-outlined text-on-surface-variant text-sm" data-icon="family_history">family_history</span>
+</div>
+<div class="space-y-4">
+<div class="flex items-center justify-between group cursor-pointer">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-secondary-fixed flex items-center justify-center text-[10px] font-bold text-on-secondary-fixed">ET</div>
+<div>
+<p class="text-xs font-bold">Emily Thompson</p>
+<p class="text-[9px] text-on-surface-variant">Spouse • Primary Driver</p>
+</div>
+</div>
+<span class="text-[10px] font-bold bg-surface-container px-2 py-0.5 rounded">2 Policies</span>
+</div>
+<div class="flex items-center justify-between group cursor-pointer">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-tertiary-fixed flex items-center justify-center text-[10px] font-bold text-on-tertiary-fixed">LT</div>
+<div>
+<p class="text-xs font-bold">Lucas Thompson</p>
+<p class="text-[9px] text-on-surface-variant">Child • Student Resident</p>
+</div>
+</div>
+<span class="text-[10px] font-bold bg-surface-container px-2 py-0.5 rounded">1 Policy</span>
+</div>
+<div class="flex items-center justify-between group cursor-pointer">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-primary-fixed flex items-center justify-center text-[10px] font-bold text-on-primary-fixed">ST</div>
+<div>
+<p class="text-xs font-bold">Sarah Thompson</p>
+<p class="text-[9px] text-on-surface-variant">Child • Dependent</p>
+</div>
+</div>
+<span class="text-[10px] font-bold bg-surface-container px-2 py-0.5 rounded">No Policy</span>
+</div>
+</div>
+<button class="w-full mt-4 py-2 border border-outline-variant/30 text-[10px] font-bold uppercase tracking-widest text-on-surface-variant hover:bg-surface-container rounded-lg transition-all">
+                            Manage Household
+                        </button>
+</div>
+<!-- Next Best Action -->
+<div class="bg-[#fdf0d5] rounded-xl p-5 border border-[#f5e1b8]">
+<div class="flex items-center gap-2 mb-3">
+<span class="material-symbols-outlined text-on-surface text-lg" data-icon="smart_toy">smart_toy</span>
+<h3 class="text-xs font-bold uppercase tracking-wider">Strategic Recommendation</h3>
+</div>
+<p class="text-xs font-medium text-on-surface/80 leading-relaxed mb-4">Customer profile suggests significant asset exposure. High probability of conversion for an Umbrella policy.</p>
+<button class="w-full py-2.5 bg-on-surface text-surface text-xs font-black rounded-lg hover:bg-on-surface/90 transition-all uppercase tracking-tight">
+                            Create Umbrella Quote
+                        </button>
+</div>
+</div>
+</div>
+<!-- Internal Notes -->
+<section class="bg-surface-container-lowest rounded-xl p-8 border-l-4 border-primary shadow-[0_4px_20px_rgba(42,52,57,0.03)] border border-surface-container">
+<div class="flex justify-between items-center mb-4">
+<h3 class="text-xs font-bold uppercase tracking-widest text-on-surface-variant">Agent Internal Dossier</h3>
+<button class="text-[10px] font-bold text-primary flex items-center gap-1.5 uppercase hover:underline">
+<span class="material-symbols-outlined text-sm" data-icon="edit_note">edit_note</span> Edit Records
+                    </button>
+</div>
+<div class="bg-surface-container-low p-5 rounded-lg border border-surface-container-high">
+<p class="text-sm text-on-surface-variant italic leading-relaxed">
+                        "Alexander mentioned thinking about a secondary property in Florida for winter 2025. High net worth household, very low price sensitivity but demands premium service. Prefers email updates but wants calls for claim-related matters. Strategic opportunity for coastal homeowners and watercraft liability."
+                    </p>
+</div>
+</section>
+</div>
+</main>
+<!-- Contextual FAB -->
+<button class="fixed bottom-8 right-8 w-14 h-14 bg-primary text-on-primary rounded-full shadow-2xl flex items-center justify-center hover:scale-110 active:scale-95 transition-all z-50">
+<span class="material-symbols-outlined text-2xl" data-icon="add_comment">add_comment</span>
+</button>
+</body></html>
