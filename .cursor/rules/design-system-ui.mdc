@@ -1,0 +1,27 @@
+---
+description: UI design principle and theme from Stitch Design System; apply to all UI work.
+globs: "**/*.tsx,**/*.jsx,**/*.vue,**/*.css,**/components/**"
+alwaysApply: false
+---
+
+# Design System: The Curated Ledger
+
+The **authoritative UI design and theme** for this project is the Stitch Design System (project `11547772720481281159`, "Design System" / Customer 360 Dashboard). All UI changes must align with it.
+
+## Reference assets (in repo)
+
+- **Spec:** [design-system/design-system.md](design-system/design-system.md) — strategy, no-line rule, typography, elevation, components, do's and don'ts.
+- **Theme (colors/fonts):** [design-system/theme.json](design-system/theme.json) — named colors, headline/body/label fonts, roundness.
+- **Visual:** [design-system/screenshot.png](design-system/screenshot.png) — project/dashboard visual reference.
+- **Code reference:** [design-system/design-system-screen.html](design-system/design-system-screen.html) — reference implementation (structure and styling).
+
+## Requirements for all UI work
+
+1. **Layout & components** — Match patterns in the screenshot and HTML: tonal surfaces, no 1px borders for sectioning, asymmetric layouts where appropriate.
+2. **Colors** — Use `design-system/theme.json` named colors (e.g. `surface`, `surface_container_low`, `primary`, `on_surface`). Never use pure black (#000000); use `on_surface` (#2a3439).
+3. **Typography** — Manrope for headlines/display, Inter for body and labels. Follow sizes in design-system.md (display-md, headline-sm, body-md, label-sm).
+4. **Surfaces** — Prefer background color shifts over borders. Use ghost borders (e.g. outline_variant at 15% opacity) only when needed for accessibility.
+5. **Buttons** — Primary: gradient primary → primary_dim, full roundedness. Secondary: secondary_container + on_secondary_container, no border.
+6. **Spacing & roundness** — Use spacing scale from theme (spacingScale 1). Main containers: lg (1rem) radius; inner cards: md (0.75rem).
+
+When adding or changing components, pages, or styles, read [design-system/design-system.md](design-system/design-system.md) and [design-system/theme.json](design-system/theme.json) and keep visuals consistent with the screenshot and reference HTML.

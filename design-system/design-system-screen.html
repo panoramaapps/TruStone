@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Customer 360 - Alexander Thompson</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "error": "#9f403d",
+                        "surface": "#f7f9fb",
+                        "on-error-container": "#752121",
+                        "secondary-fixed": "#d3e4fe",
+                        "tertiary-container": "#7ff3be",
+                        "tertiary-fixed": "#7ff3be",
+                        "inverse-on-surface": "#9a9d9f",
+                        "on-primary-container": "#334c9d",
+                        "outline": "#717c82",
+                        "surface-container-highest": "#d9e4ea",
+                        "primary": "#4059aa",
+                        "on-secondary-fixed-variant": "#4d5d73",
+                        "secondary-fixed-dim": "#c5d6f0",
+                        "primary-fixed-dim": "#c9d3ff",
+                        "outline-variant": "#a9b4b9",
+                        "surface-variant": "#d9e4ea",
+                        "error-dim": "#4e0309",
+                        "tertiary-dim": "#005f41",
+                        "on-tertiary": "#e6ffef",
+                        "surface-dim": "#cfdce3",
+                        "error-container": "#fe8983",
+                        "on-tertiary-container": "#005a3d",
+                        "on-surface-variant": "#566166",
+                        "on-secondary-container": "#435368",
+                        "surface-container-low": "#f0f4f7",
+                        "surface-container-lowest": "#ffffff",
+                        "on-primary": "#f8f7ff",
+                        "on-background": "#2a3439",
+                        "surface-container": "#e8eff3",
+                        "surface-container-high": "#e1e9ee",
+                        "on-tertiary-fixed": "#00452e",
+                        "on-secondary": "#f7f9ff",
+                        "inverse-surface": "#0b0f10",
+                        "primary-fixed": "#dce1ff",
+                        "inverse-primary": "#8fa7fe",
+                        "on-secondary-fixed": "#314055",
+                        "on-error": "#fff7f6",
+                        "secondary-container": "#d3e4fe",
+                        "surface-bright": "#f7f9fb",
+                        "on-tertiary-fixed-variant": "#006545",
+                        "secondary": "#506076",
+                        "on-primary-fixed": "#1d3989",
+                        "secondary-dim": "#44546a",
+                        "primary-dim": "#334d9d",
+                        "background": "#f7f9fb",
+                        "on-primary-fixed-variant": "#3d57a7",
+                        "on-surface": "#2a3439",
+                        "tertiary": "#006d4b",
+                        "tertiary-fixed-dim": "#71e4b1",
+                        "primary-container": "#dce1ff",
+                        "surface-tint": "#4059aa"
+                    },
+                    fontFamily: {
+                        "headline": ["Manrope"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "1rem", "xl": "1.25rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3 { font-family: 'Manrope', sans-serif; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface selection:bg-primary-container selection:text-on-primary-container">
+<!-- Sidebar Navigation (SideNavBar) -->
+<aside class="h-screen w-64 fixed left-0 top-0 bg-[#e1e9ee] flex flex-col py-6 px-4 z-50">
+<div class="mb-10 px-2">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined" data-icon="account_balance_wallet">account_balance_wallet</span>
+</div>
+<div>
+<h2 class="text-xl font-black text-[#2a3439] leading-tight">Concierge</h2>
+<p class="text-[10px] uppercase tracking-widest text-on-surface-variant font-bold">Premium Insurance</p>
+</div>
+</div>
+</div>
+<nav class="flex-1 space-y-2">
+<a class="flex items-center gap-3 px-4 py-3 text-[#566166] hover:bg-[#f0f4f7] transition-all rounded-lg group" href="#">
+<span class="material-symbols-outlined group-hover:text-primary" data-icon="dashboard">dashboard</span>
+<span class="font-manrope font-medium text-sm tracking-tight">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-[#0D47A1] font-bold bg-[#f0f4f7] rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+<span class="font-manrope font-medium text-sm tracking-tight">Clients</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-[#566166] hover:bg-[#f0f4f7] transition-all rounded-lg group" href="#">
+<span class="material-symbols-outlined group-hover:text-primary" data-icon="description">description</span>
+<span class="font-manrope font-medium text-sm tracking-tight">Policies</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-[#566166] hover:bg-[#f0f4f7] transition-all rounded-lg group" href="#">
+<span class="material-symbols-outlined group-hover:text-primary" data-icon="gavel">gavel</span>
+<span class="font-manrope font-medium text-sm tracking-tight">Claims</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-[#566166] hover:bg-[#f0f4f7] transition-all rounded-lg group" href="#">
+<span class="material-symbols-outlined group-hover:text-primary" data-icon="analytics">analytics</span>
+<span class="font-manrope font-medium text-sm tracking-tight">Reports</span>
+</a>
+</nav>
+<div class="mt-auto pt-6 border-t border-outline-variant/20 space-y-2">
+<a class="flex items-center gap-3 px-4 py-2 text-[#566166] hover:text-[#2a3439] transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-manrope font-medium text-sm tracking-tight">Settings</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-2 text-[#566166] hover:text-[#2a3439] transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="contact_support">contact_support</span>
+<span class="font-manrope font-medium text-sm tracking-tight">Support</span>
+</a>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="ml-64 min-h-screen">
+<!-- Top Navigation (TopNavBar) -->
+<header class="w-full h-16 sticky top-0 z-40 bg-[#f7f9fb] flex justify-between items-center px-8">
+<div class="flex items-center gap-8">
+<h1 class="text-lg font-bold text-[#0D47A1]">The Curated Ledger</h1>
+<div class="relative group">
+<span class="absolute left-3 top-1/2 -translate-y-1/2 material-symbols-outlined text-on-surface-variant text-sm" data-icon="search">search</span>
+<input class="bg-surface-container-low border-none rounded-full py-2 pl-10 pr-4 text-sm w-64 focus:ring-2 focus:ring-primary/20 transition-all" placeholder="Search client or policy..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="flex items-center gap-2 px-4 py-2 bg-gradient-to-br from-primary to-primary-dim text-on-primary rounded-full text-sm font-medium hover:shadow-lg transition-all">
+<span class="material-symbols-outlined text-lg" data-icon="add">add</span>
+                    New Policy
+                </button>
+<button class="p-2 text-on-surface-variant hover:bg-surface-container-low rounded-full transition-colors">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<div class="h-8 w-8 rounded-full bg-surface-container-highest overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Agent profile headshot professional" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAERzTSDkXb2udKwyuZLB09PKmrpHwMpMkxt_DG4FmtAsPk_Ionw8ICfh4guaeWuJLIESOF7jVhpKTUr1rhPpLJevXMU1Gt2894BpUBpsW4GpUNglvlo4f8lQ5UIfUU6F4aQaLW5AfIgIufFGGvEuzE7si4sehWw1J9LhzFqI8S41ghsiLgLdtj5jzzZuKkU9GLgRB-x9PoMTwfSmY_ApXvujEjHd9O-Plcs2HYdiHFYn16DBNx6fqldokMx25LzgcXcmsQDLkQlXCp"/>
+</div>
+</div>
+</header>
+<!-- Dashboard Content -->
+<div class="p-8 max-w-7xl mx-auto space-y-8">
+<!-- Hero Identity Section -->
+<section class="flex flex-col md:flex-row gap-8 items-start">
+<div class="flex-1 bg-surface-container-lowest rounded-xl p-8 flex gap-8 items-center shadow-[0_10px_30px_rgba(42,52,57,0.04)]">
+<div class="relative">
+<div class="w-24 h-24 rounded-full border-4 border-surface-container p-1">
+<img class="w-full h-full object-cover rounded-full" data-alt="Client portrait of Alexander Thompson" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCemP86eT4IQEZXNgFdtbAjJiohaHwCEXfvTC75iwgeGQTGO-8kLcrS-13pSVBimVHcPIlvekE0ZJD9cwtvZE7Z32up1ZeWvj2L9rClKnjgGvovR4yQIZAxSp0y8dO5uMghrsAFsePTiNW-Lwqby4zRaUf7QRJ-zAs7X3oUBgVal1AnWFgr1oDDfhJyVo8b-19a75iyaULTbGUh0DscO3Zl9yfQdKVFL3r565Gx_jgFMPtkVkdoGCsK1-IVzwEXYV8RDZI6H7An8jJh"/>
+</div>
+<span class="absolute bottom-1 right-1 bg-tertiary-container text-on-tertiary-container text-[10px] px-2 py-0.5 rounded-full font-bold uppercase tracking-tighter">VIP</span>
+</div>
+<div class="space-y-1">
+<div class="flex items-center gap-3">
+<h2 class="text-3xl font-extrabold text-on-surface tracking-tight">Alexander Thompson</h2>
+<span class="material-symbols-outlined text-primary cursor-pointer hover:scale-110 transition-transform" data-icon="verified">verified</span>
+</div>
+<p class="text-on-surface-variant flex items-center gap-2 font-medium">
+<span class="material-symbols-outlined text-sm" data-icon="mail">mail</span> alexander.t@example.com
+                            <span class="mx-2 opacity-20">|</span>
+<span class="material-symbols-outlined text-sm" data-icon="call">call</span> (555) 234-8901
+                        </p>
+<div class="flex gap-4 pt-2">
+<div class="text-[11px] bg-surface-container-low px-3 py-1 rounded-md text-on-surface-variant">
+<span class="font-bold">DOB:</span> May 14, 1982
+                            </div>
+<div class="text-[11px] bg-surface-container-low px-3 py-1 rounded-md text-on-surface-variant">
+<span class="font-bold">Member Since:</span> 2015
+                            </div>
+</div>
+</div>
+</div>
+<div class="w-full md:w-80 bg-surface-container-high rounded-xl p-6 space-y-4">
+<h3 class="text-sm font-bold uppercase tracking-widest text-on-surface-variant">Account Health</h3>
+<div class="space-y-3">
+<div class="flex justify-between items-end">
+<span class="text-xs font-semibold">Retention Score</span>
+<span class="text-lg font-black text-tertiary">98%</span>
+</div>
+<div class="w-full bg-surface-container-highest h-1.5 rounded-full overflow-hidden">
+<div class="bg-tertiary h-full w-[98%]"></div>
+</div>
+<p class="text-[11px] text-on-surface-variant italic leading-relaxed">High value household. Low price sensitivity. Cross-sell opportunity detected for Umbrella policy.</p>
+</div>
+</div>
+</section>
+<!-- Bento Grid Main Data -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+<!-- Policy Snapshot -->
+<div class="md:col-span-8 bg-surface-container-lowest rounded-xl p-6 shadow-[0_10px_30px_rgba(42,52,57,0.04)]">
+<div class="flex justify-between items-center mb-6">
+<h3 class="text-lg font-bold">Policy Portfolio</h3>
+<div class="flex gap-2">
+<span class="text-xs font-bold text-on-surface-variant bg-surface-container px-3 py-1 rounded-full">Total Premium: $14,250/yr</span>
+</div>
+</div>
+<div class="space-y-4">
+<!-- Policy Row 1 -->
+<div class="flex items-center justify-between p-4 bg-surface-container-low rounded-lg hover:bg-surface-container transition-colors group">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+</div>
+<div>
+<p class="font-bold text-sm">Primary Residence (HO3)</p>
+<p class="text-[11px] text-on-surface-variant">POL-8839210-A • Exp. Nov 2024</p>
+</div>
+</div>
+<div class="text-right flex items-center gap-6">
+<div>
+<p class="text-sm font-bold">$4,200</p>
+<p class="text-[10px] text-on-surface-variant uppercase font-bold tracking-tighter">Premium</p>
+</div>
+<span class="bg-tertiary-container text-on-tertiary-container text-[10px] px-2 py-0.5 rounded-full font-bold">ACTIVE</span>
+<span class="material-symbols-outlined text-on-surface-variant opacity-0 group-hover:opacity-100 transition-opacity cursor-pointer" data-icon="chevron_right">chevron_right</span>
+</div>
+</div>
+<!-- Policy Row 2 -->
+<div class="flex items-center justify-between p-4 bg-surface-container-low rounded-lg hover:bg-surface-container transition-colors group">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-secondary-container flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined" data-icon="directions_car">directions_car</span>
+</div>
+<div>
+<p class="font-bold text-sm">Tesla Model S &amp; Audi Q7</p>
+<p class="text-[11px] text-on-surface-variant">POL-1120042-M • Exp. Oct 2024</p>
+</div>
+</div>
+<div class="text-right flex items-center gap-6">
+<div>
+<p class="text-sm font-bold">$3,850</p>
+<p class="text-[10px] text-on-surface-variant uppercase font-bold tracking-tighter">Premium</p>
+</div>
+<span class="bg-tertiary-container text-on-tertiary-container text-[10px] px-2 py-0.5 rounded-full font-bold">ACTIVE</span>
+<span class="material-symbols-outlined text-on-surface-variant opacity-0 group-hover:opacity-100 transition-opacity cursor-pointer" data-icon="chevron_right">chevron_right</span>
+</div>
+</div>
+<!-- Policy Row 3 -->
+<div class="flex items-center justify-between p-4 bg-surface-container-low rounded-lg hover:bg-surface-container transition-colors group border-2 border-primary/10">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-tertiary-container flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined" data-icon="diamond">diamond</span>
+</div>
+<div>
+<p class="font-bold text-sm">Valuable Items (Floater)</p>
+<p class="text-[11px] text-on-surface-variant">POL-9920311-V • Exp. Dec 2024</p>
+</div>
+</div>
+<div class="text-right flex items-center gap-6">
+<div>
+<p class="text-sm font-bold">$6,200</p>
+<p class="text-[10px] text-on-surface-variant uppercase font-bold tracking-tighter">Premium</p>
+</div>
+<span class="bg-tertiary-container text-on-tertiary-container text-[10px] px-2 py-0.5 rounded-full font-bold">ACTIVE</span>
+<span class="material-symbols-outlined text-on-surface-variant opacity-0 group-hover:opacity-100 transition-opacity cursor-pointer" data-icon="chevron_right">chevron_right</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Claims & Service Flags -->
+<div class="md:col-span-4 space-y-6">
+<div class="bg-surface-container-lowest rounded-xl p-6 shadow-[0_10px_30px_rgba(42,52,57,0.04)]">
+<div class="flex items-center justify-between mb-4">
+<h3 class="text-sm font-bold uppercase tracking-widest text-on-surface-variant">Claims Activity</h3>
+<span class="w-2 h-2 rounded-full bg-error animate-pulse"></span>
+</div>
+<div class="flex items-end gap-2 mb-4">
+<span class="text-3xl font-black">01</span>
+<span class="text-xs font-bold text-on-surface-variant mb-1">OPEN CLAIM</span>
+</div>
+<div class="p-3 bg-error-container/20 rounded-lg">
+<div class="flex justify-between items-start mb-1">
+<span class="text-[11px] font-bold text-on-error-container">Auto Glass Damage</span>
+<span class="text-[10px] text-on-surface-variant">Sept 12</span>
+</div>
+<p class="text-[10px] text-on-surface-variant leading-tight">Adjuster assigned. Appointment scheduled for tomorrow at 2:00 PM.</p>
+</div>
+</div>
+<div class="bg-[#fdf0d5] rounded-xl p-6">
+<div class="flex items-center gap-2 mb-4">
+<span class="material-symbols-outlined text-on-surface" data-icon="lightbulb">lightbulb</span>
+<h3 class="text-sm font-bold">Next Best Action</h3>
+</div>
+<p class="text-xs font-medium text-on-surface leading-relaxed mb-4">Customer has high-value assets but no Umbrella policy. Potential exposure of $2M+.</p>
+<button class="w-full py-2 bg-on-surface text-surface text-xs font-bold rounded-lg hover:opacity-90 transition-opacity">
+                            Generate Umbrella Quote
+                        </button>
+</div>
+</div>
+<!-- Expiries & Renewals -->
+<div class="md:col-span-5 bg-surface-container-lowest rounded-xl p-6 shadow-[0_10px_30px_rgba(42,52,57,0.04)]">
+<h3 class="text-sm font-bold uppercase tracking-widest text-on-surface-variant mb-6">Upcoming Expiries</h3>
+<div class="relative pl-6 border-l border-outline-variant/30 space-y-8">
+<div class="relative">
+<div class="absolute -left-[29px] top-1 w-3 h-3 rounded-full bg-error border-2 border-surface-container-lowest"></div>
+<p class="text-xs font-bold">Oct 14, 2024 <span class="text-error ml-2 text-[10px] uppercase font-black">30 Days</span></p>
+<p class="text-sm font-medium">Auto Policy Renewal (POL-1120042)</p>
+</div>
+<div class="relative">
+<div class="absolute -left-[29px] top-1 w-3 h-3 rounded-full bg-primary border-2 border-surface-container-lowest"></div>
+<p class="text-xs font-bold text-on-surface-variant">Nov 22, 2024 <span class="ml-2 text-[10px] uppercase font-black">60 Days</span></p>
+<p class="text-sm font-medium">Homeowners Renewal (POL-8839210)</p>
+</div>
+<div class="relative">
+<div class="absolute -left-[29px] top-1 w-3 h-3 rounded-full bg-outline-variant border-2 border-surface-container-lowest"></div>
+<p class="text-xs font-bold text-on-surface-variant">Dec 01, 2024 <span class="ml-2 text-[10px] uppercase font-black">90 Days</span></p>
+<p class="text-sm font-medium">Jewelry Floater Renewal (POL-9920311)</p>
+</div>
+</div>
+</div>
+<!-- Coverage Snapshot -->
+<div class="md:col-span-7 bg-surface-container-lowest rounded-xl p-6 shadow-[0_10px_30px_rgba(42,52,57,0.04)]">
+<h3 class="text-sm font-bold uppercase tracking-widest text-on-surface-variant mb-6">Key Coverage Details</h3>
+<div class="grid grid-cols-2 gap-x-8 gap-y-6">
+<div class="space-y-1">
+<p class="text-[10px] font-bold text-on-surface-variant uppercase tracking-tighter">Dwelling Coverage</p>
+<p class="text-xl font-black">$850,000</p>
+<div class="w-full h-1 bg-surface-container rounded-full overflow-hidden">
+<div class="bg-primary h-full w-3/4"></div>
+</div>
+</div>
+<div class="space-y-1">
+<p class="text-[10px] font-bold text-on-surface-variant uppercase tracking-tighter">Auto Liability</p>
+<p class="text-xl font-black">$500k/$1M</p>
+<div class="w-full h-1 bg-surface-container rounded-full overflow-hidden">
+<div class="bg-secondary h-full w-full"></div>
+</div>
+</div>
+<div class="space-y-1">
+<p class="text-[10px] font-bold text-on-surface-variant uppercase tracking-tighter">Deductible (Home)</p>
+<p class="text-xl font-black">$2,500</p>
+<p class="text-[9px] text-on-surface-variant">All Peril Fixed</p>
+</div>
+<div class="space-y-1">
+<p class="text-[10px] font-bold text-on-surface-variant uppercase tracking-tighter">Jewelry Appraised</p>
+<p class="text-xl font-black">$125,000</p>
+<p class="text-[9px] text-on-surface-variant">Scheduled Items (4)</p>
+</div>
+</div>
+</div>
+<!-- Activity Feed -->
+<div class="md:col-span-12 bg-surface-container-low rounded-xl p-8 flex flex-col md:flex-row gap-12">
+<div class="flex-1">
+<h3 class="text-sm font-bold uppercase tracking-widest text-on-surface-variant mb-4">Recent Activity</h3>
+<div class="space-y-6">
+<div class="flex gap-4">
+<div class="mt-1 w-6 h-6 rounded-full bg-surface-container-highest flex items-center justify-center">
+<span class="material-symbols-outlined text-sm" data-icon="phone_callback">phone_callback</span>
+</div>
+<div>
+<p class="text-xs font-bold">Outbound Call - Claims Follow-up</p>
+<p class="text-[10px] text-on-surface-variant">Yesterday by Sarah Miller (Agent Assistant)</p>
+</div>
+</div>
+<div class="flex gap-4">
+<div class="mt-1 w-6 h-6 rounded-full bg-surface-container-highest flex items-center justify-center">
+<span class="material-symbols-outlined text-sm" data-icon="mail">mail</span>
+</div>
+<div>
+<p class="text-xs font-bold">Policy Document Viewed</p>
+<p class="text-[10px] text-on-surface-variant">Sept 10 via Customer Portal</p>
+</div>
+</div>
+</div>
+</div>
+<div class="w-full md:w-80 bg-surface-container-lowest rounded-xl p-6 border border-outline-variant/10 shadow-sm">
+<h3 class="text-sm font-bold uppercase tracking-widest text-on-surface-variant mb-4">Servicing Team</h3>
+<div class="flex items-center gap-4 mb-4">
+<div class="w-10 h-10 rounded-full bg-surface-container-high overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Agent headshot Sarah Jenkins" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC_ci8Iadq8kRknuXi1JLGs4ivMTE2IjhtPozA4_eLGtZBRAlf1QQ9xDRWYLEZS-VSArYibYn0V5yP3g8GuCOmfBU0J-whJDzjJRd49pEU1lrSzJNnPjz5bTbJhwKfckwdB3cymyvSH-Ep-bdXZ43vxtjhLu1IHLv5tV7mOg5BuXF4SXpgerajKrCPP_AGIuloABpOpTX3u7d-oHjnZtvCkzbLuJnru67jMsqDSp-MkMUWl-QHpfUzjyvdLf8rwR54m6wDQRcrVFyCu"/>
+</div>
+<div>
+<p class="text-xs font-bold">Sarah Jenkins</p>
+<p class="text-[10px] text-on-surface-variant">Primary Agent • Chicago NW</p>
+</div>
+</div>
+<div class="pt-4 border-t border-outline-variant/10 flex justify-between">
+<button class="p-2 bg-surface-container text-on-surface-variant rounded-md hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-lg" data-icon="chat">chat</span>
+</button>
+<button class="p-2 bg-surface-container text-on-surface-variant rounded-md hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-lg" data-icon="event">event</span>
+</button>
+<button class="p-2 bg-surface-container text-on-surface-variant rounded-md hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-lg" data-icon="share">share</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Internal Notes Section -->
+<section class="bg-surface-container-lowest rounded-xl p-8 border-l-4 border-primary shadow-[0_10px_30px_rgba(42,52,57,0.04)]">
+<div class="flex justify-between items-center mb-4">
+<h3 class="text-sm font-bold uppercase tracking-widest text-on-surface-variant">Agent Internal Notes</h3>
+<button class="text-[10px] font-bold text-primary flex items-center gap-1">
+<span class="material-symbols-outlined text-sm" data-icon="edit">edit</span> EDIT NOTES
+                    </button>
+</div>
+<div class="bg-surface-container-low p-4 rounded-lg">
+<p class="text-sm text-on-surface italic leading-relaxed">
+                        "Alexander mentioned thinking about a secondary property in Florida for winter 2025. Follow up in late 2024 to discuss coastal homeowners options. High preference for consolidated billing. Prefers email communication over phone during business hours."
+                    </p>
+</div>
+</section>
+</div>
+</main>
+<!-- Contextual FAB - suppressed for profile view as per rules but available for creation if needed -->
+<!-- For this dashboard context, a 'Quick Note' or 'Contact' FAB is appropriate -->
+<button class="fixed bottom-8 right-8 w-14 h-14 bg-primary text-on-primary rounded-full shadow-2xl flex items-center justify-center hover:scale-105 transition-transform z-50">
+<span class="material-symbols-outlined" data-icon="edit_note">edit_note</span>
+</button>
+</body></html>
