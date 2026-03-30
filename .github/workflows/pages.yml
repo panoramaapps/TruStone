@@ -1,3 +1,9 @@
+# Deploys the static site in /demo as the site root (https://<org>.github.io/<repo>/).
+#
+# If the live URL shows Jekyll/README instead of this demo, Pages is still using
+# "Deploy from a branch". Fix (one-time): Repo Settings → Pages → Build and deployment →
+# Source: GitHub Actions. Or API: PUT /repos/{owner}/{repo}/pages with {"build_type":"workflow"}.
+
 name: Deploy GitHub Pages
 
 on:
@@ -18,13 +24,17 @@ jobs:
   deploy:
     environment:
       name: github-pages
-      url: ${{ steps.deploy.outputs.page_url }}
+      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/configure-pages@v4
-      - uses: actions/upload-pages-artifact@v3
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
         with:
           path: demo
-      - id: deploy
-        uses: actions/deploy-pages@v4
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v5
